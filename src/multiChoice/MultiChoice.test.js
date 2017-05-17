@@ -4,7 +4,7 @@ import MultiChoice from './MultiChoice';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  const answers = [
+  const sample_data = [
     {
       question: 'What is the meaning of life?',
       correct_answer: '42',
@@ -16,5 +16,5 @@ it('renders without crashing', () => {
       possible_answers: ['Coding Train', 'FunFunFunction', 'Young Lamb', 'Wes Bos']
     }
   ]
-  ReactDOM.render(<MultiChoice answers={answers[0].possible_answers}/>, div);
+  ReactDOM.render(<MultiChoice answers={sample_data[0].possible_answers}/>, div);
 });

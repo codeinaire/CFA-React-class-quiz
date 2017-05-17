@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Question from '../question/Question';
-import ProgressBar from '../progressBar/ProgressBar';
 import MultiChoice from '../multiChoice/MultiChoice';
 import Results from '../results/Results';
+import CircularProgressbar from 'react-circular-progressbar';
+import SubmitButton from '../submitArea/SubmitButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +23,11 @@ class App extends Component {
         question: 'What is the meaning of life?',
         correct_answer: '42',
         possible_answers: ['Love', 'Money', 'JavaScript', '42']
+      },
+      {
+        question: 'Who is the best coding YouTuber?',
+        correct_answer: 'FunFunFunction',
+        possible_answers: ['Coding Train', 'FunFunFunction', 'Young Lamb', 'Wes Bos']
       },
       {
         question: 'Who is the best coding YouTuber?',
@@ -59,24 +66,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className="flex-parent">
-        <h2 className="chd-welcome">Welcome to Testing Quiz</h2>
+      <MuiThemeProvider>
 
-        {this.state.progress < this.quiz_data.length ? (
-        <div className="chd-quiz">
-          <Question current_question={this.quiz_data[this.state.progress].question} />
-          <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
-          <MultiChoice
-            answers={this.quiz_data[this.state.progress].possible_answers}
-            updateSelected={this.updateSelected}
-            handleSubmit={this.submitAnswer}
-            selectedAnswer={this.state.selected} />
+        <div>
+          {this.state.progress < this.quiz_data.length ? (
+          <div className="flex-parent">
+            <h2 className="f-child-1">Welcome to Testing Quiz</h2>
+            <div className="f-child-2">
+              <Question current_question={this.quiz_data[this.state.progress].question} />
+              {/* <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} /> */}
+            </div>
+            <div className="f-child-3">
+              <MultiChoice
+              answers={this.quiz_data[this.state.progress].possible_answers}
+              updateSelected={this.updateSelected} />
+            </div>
+            <div className="f-child-4">
+              <SubmitButton handleSubmit={this.submitAnswer} selectedAnswer={this.state.selected} />
+            </div>
+            <div className="f-child-5">
+              <CircularProgressbar percentage={Math.floor((((this.state.progress + 1) / this.quiz_data.length) * 100))} initialAnimation={true} />
+            </div>
+          </div>
+          )
+          : (
+            <Results score={this.state.score} end_message="Congratulations, you have finished!" retryQuiz={this.retryQuiz}/>
+          )}
         </div>
-        )
-        : (
-          <Results score={this.state.score} end_message="Congratulations, you have finished!" retryQuiz={this.retryQuiz}/>
-        )}
-      </div>
+
+      </MuiThemeProvider>
     );
   }
 }

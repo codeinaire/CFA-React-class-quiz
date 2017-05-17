@@ -1,11 +1,31 @@
 # 17/05/17
 
 Explaining tests. Try to tier explaination from high-level to low level.
+Find some components to bring into the app, find these components:
+1) progressBar component
+2) components for css framework
+3) another component that we can bring into the package
+
+## stateless vs stateful components
+
+
+
 
 ## Type checking with Flow
 What is Flow?? It is helping us to id and validate that we are using the correct type and we have the right props coming through to the component.
 
+Results wouldbe good to have a default message for the flow testing.
 
+Prop types and default props. It's good to let them know the default props so we'll know what data types to feed into the tests and we don't have to hunt it down as it is already in the component.
+
+Default prop types are for when a component doesn't really have any change in the state. Shouhei made a good argument for not putting a default prop type for the multiChoice.
+
+A default prop shouldn't be on a component that changes, but a component that stays the same or such as a default message. Testing the set state is really tricky to do. Jamie uses Enyzme and AirBnB were one of the early adopters of React. They creted an open source library called Enzyme and they have a great development blog to use.
+
+yarn add enzyme --dev
+yarn add react-test-renderer --dev
+
+smart and dumb components...
 # 16/05/17
 
 the entry point for this app, I think, is index.js. It has this:
