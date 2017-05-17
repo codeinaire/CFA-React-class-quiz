@@ -1,6 +1,6 @@
-* {
+/** {
    border: 1px solid red !important;
-}
+}*/
 
 .App {
   text-align: center;
@@ -27,11 +27,16 @@
 }
 
 @media all and (min-width: 800px) {
-  .f-child-3    { flex: 3 0px; }
+  .multi-choice    { flex: 3 0px; }
   .f-child-2 { order: 1; }
-  .f-child-3    { order: 2; }
+  .multi-choice    { order: 2; }
   .f-child-5 { order: 3; }
   .f-child-4  { order: 4; }
+}
+
+.multi-choice {
+  padding: -5em;
+  background-color: rgba(62,152,199, .5);
 }
 
 .f-child-5 {

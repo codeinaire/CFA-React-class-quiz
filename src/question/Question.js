@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from  'prop-types';
+import './Question.css';
 
 class Question extends Component {
   render() {
     return (
-      <h4>{this.props.current_question}</h4>
-    )
+      <div className="q-container">
+        <h4>{this.props.current_question}</h4>
+        <h4 className="q-data">{this.props.questionData}</h4>
+      </div>
+      )
   }
 
 }

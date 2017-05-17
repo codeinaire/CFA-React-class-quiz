@@ -1,0 +1,9 @@
+.q-data {
+  width: 100%;
+  /*text-align: justify;;*/
+  max-width: 300px;
+}
+
+.q-container {
+  text-align: center;
+}

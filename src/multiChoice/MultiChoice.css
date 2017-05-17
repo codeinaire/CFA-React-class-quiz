@@ -1,4 +1,10 @@
 .answer-button {
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 150px;
+  border-radius: 3%;
+
+  margin: 1em;
+}
+.answer-button:hover {
+  background-color: #c73e98;
 }

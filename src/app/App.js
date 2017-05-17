@@ -21,16 +21,19 @@ class App extends Component {
     this.quiz_data = [
       {
         question: 'What is the meaning of life?',
+        question_data: 'The meaning of life was first calculated by a supercomputer that was so complex and so large that it was the size of a planet. It had its own friggin eco system!',
         correct_answer: '42',
         possible_answers: ['Love', 'Money', 'JavaScript', '42']
       },
       {
         question: 'Who is the best coding YouTuber?',
+        question_data: 'The meaning of life was first calculated by a supercomputer that was so complex and so large that it was the size of a planet. It had its own friggin eco system!',
         correct_answer: 'FunFunFunction',
         possible_answers: ['Coding Train', 'FunFunFunction', 'Young Lamb', 'Wes Bos']
       },
       {
         question: 'Who is the best coding YouTuber?',
+        question_data: 'The meaning of life was first calculated by a supercomputer that was so complex and so large that it was the size of a planet. It had its own friggin eco system!',
         correct_answer: 'FunFunFunction',
         possible_answers: ['Coding Train', 'FunFunFunction', 'Young Lamb', 'Wes Bos']
       }
@@ -73,10 +76,11 @@ class App extends Component {
           <div className="flex-parent">
             <h2 className="f-child-1">Welcome to Testing Quiz</h2>
             <div className="f-child-2">
-              <Question current_question={this.quiz_data[this.state.progress].question} />
+              <Question current_question={this.quiz_data[this.state.progress].question}
+              questionData={this.quiz_data[this.state.progress].question_data} />
               {/* <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} /> */}
             </div>
-            <div className="f-child-3">
+            <div className="multi-choice">
               <MultiChoice
               answers={this.quiz_data[this.state.progress].possible_answers}
               updateSelected={this.updateSelected} />
