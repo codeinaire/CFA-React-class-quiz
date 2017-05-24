@@ -8,6 +8,7 @@ import SubmitButton from '../submitArea/SubmitButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -18,6 +19,7 @@ class App extends Component {
     this.updateSelected = this.updateSelected.bind(this);
     this.submitAnswer = this.submitAnswer.bind(this);
     this.retryQuiz = this.retryQuiz.bind(this);
+
     this.quiz_data = [
       {
         question: 'What is the meaning of life?',

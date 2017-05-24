@@ -1,3 +1,11 @@
+# 24/05/17
+
+minification is jamming all the contents for the file into one line. this is part of what happens when we `yarn run build`.
+
+In `build/static/main...js` we have our whole app. To get the app to run we just need to run the build directory. If we make changes we'll have to run the build command again. Some servers will run the build command when we deploy it. This i similar to precompiling in Heroku.
+
+
+
 # 17/05/17
 
 Explaining tests. Try to tier explaination from high-level to low level.
